@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
+    //sail artisan db:seedで一気にseed作成
+    //sail artisan db:seed --class = ○○○○Seederで個別にseed作成
     {
         // \App\Models\User::factory(10)->create();
 
@@ -20,5 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $this->call([TweetsSeeder::class]);
     }
 }
