@@ -24,7 +24,11 @@ class CreateRequest extends FormRequest
     public function rules()
     {
         return [
-          'tweet' => 'required|max:140' 
+          'tweet' => 'required|max:140'
         ];
+    }
+    public function tweet(): string
+    {
+      return $this -> input('tweet');
     }
 }
