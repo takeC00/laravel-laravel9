@@ -27,7 +27,7 @@ Route::post('/tweet/create', \App\Http\Controllers\Tweet\CreateController::class
 ->name('tweet.create');
 Route::get('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\IndexController::class)
 ->name('tweet.update.index')->where('tweetId', '[0-9]+');
-Route::put('/tweet/update/{tweetId}, \App\\Http\Controllers\Tweet\Update\PutController::class')
+Route::put('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\PutController::class)
 ->name('tweet.update.put')->where('tweetId', '[0-9]+');
 //tweet/update/abcなどを除外している
 //tweetIdに設定も可能（app/Providers/RouteServiceProvider.php）

@@ -10,15 +10,20 @@
   <h1>つぶやきを編集する</h1>
   <div>
     <a href="{{ route('tweet.index') }}">戻る</a>
-    <form action="{{ route('tweet.update.put', ['tweetId' => $tweet->id]) }}" methood="post">
+    <p>編集フォーム</p>
+    @if (session('feedback.success'))
+      <p style="color: green;">{{ session('feedback.success') }}</p>
+    @endif
+    <form action="{{ route('tweet.update.put', ['tweetId' => $tweet->id]) }}" method="post">
       @method('PUT')
       @csrf
       <label for="tweet-content">つぶやき</label>
       <span>140字まで</span>
-      <textarea id="tweet-content" type="text" name="tweet"
-      placeholder="つぶやきを入力">{{ $tweet->content }}</textarea>
+      <textarea id="tweet-content" type="text" name="tweet" placeholder="つぶやきを入力">
+        {{ $tweet->content }}
+      </textarea>
       @error('tweet')
-      <p style="color:red;">{{ $messsage }}</p>
+        <p style="color:red;">{{ $messsage }}</p>
       @enderror
       <button type="submit">編集</button>
     </form>

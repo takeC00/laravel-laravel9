@@ -18,10 +18,6 @@ class IndexController extends Controller
     public function __invoke(Request $request)
     {
         $tweetId = (int) $request->route('tweetId');
-        //$tweet = Tweet::where('id', $tweetId)->first();
-        //if (is_null($tweet)) {
-        //  throw new NotFoundHttpException('存在しないつぶやきです');
-        //}
         $tweet = Tweet::where('id', $tweetId)->firstOrFail();
         return view('tweet.update')->with('tweet', $tweet);
     }
