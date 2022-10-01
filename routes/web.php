@@ -33,3 +33,4 @@ Route::put('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\PutCont
 //tweetIdに設定も可能（app/Providers/RouteServiceProvider.php）
 Route::delete('/tweet/delete/{tweetId}', \App\Http\Controllers\Tweet\DeleteController::class)
 ->name('tweet.delete');
+
