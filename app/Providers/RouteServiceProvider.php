@@ -17,7 +17,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    //登録・ログイン後にリダイレクトされるページの変更
+    public const HOME = '/tweet';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
@@ -27,7 +28,7 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         Route::pattern('tweetId', '[0-9]+');
-        
+
         $this->configureRateLimiting();
 
         $this->routes(function () {
